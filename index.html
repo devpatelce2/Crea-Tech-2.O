@@ -314,6 +314,38 @@
     .coord-person{flex-direction:column;align-items:flex-start;gap:.5rem;}
     .coord-call{align-self:flex-start;}
   }
+
+    /* RESULTS / COMING SOON */
+  .results-wrap{
+    position:relative;border-radius:26px;padding:3.2rem 2rem;
+    background:linear-gradient(160deg,var(--panel2),var(--panel-solid));
+    border:1px solid var(--line);overflow:hidden;text-align:center;
+  }
+  .results-wrap::before{
+    content:'';position:absolute;top:-80px;left:-80px;width:240px;height:240px;border-radius:50%;
+    background:radial-gradient(circle,rgba(56,230,255,.22),transparent 70%);filter:blur(18px);
+  }
+  .results-wrap::after{
+    content:'';position:absolute;bottom:-90px;right:-90px;width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(240,32,127,.18),transparent 70%);filter:blur(20px);
+  }
+  .soon-badge{
+    position:relative;z-index:1;
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.06em;
+    color:var(--cyan);border:1px solid rgba(56,230,255,.35);
+    padding:.5rem 1.1rem;border-radius:999px;background:rgba(56,230,255,.06);
+    margin-bottom:1.4rem;text-transform:uppercase;
+  }
+  .soon-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse-dot 1.6s ease-in-out infinite;}
+  @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+  .results-wrap h3{position:relative;z-index:1;font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600;margin-bottom:.8rem;}
+  .results-wrap p{position:relative;z-index:1;color:var(--muted);font-size:.98rem;line-height:1.65;max-width:520px;margin:0 auto;}
+  .results-note{
+    position:relative;z-index:1;margin-top:1.8rem;display:inline-flex;align-items:center;gap:.5rem;
+    font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--muted-dim);
+  }
+  
 </style>
 </head>
 <body>
@@ -516,7 +548,20 @@
     </div>
   </div>
 </section>
-
+<!-- RESULTS -->
+<section class="section" id="results">
+  <div class="section-head reveal">
+    <div class="eyebrow">round01.results</div>
+    <h2>Round 1 Results</h2>
+    <p class="lead">Shortlisted teams for the AI Build Challenge will be announced here.</p>
+  </div>
+  <div class="results-wrap reveal">
+    <span class="soon-badge"><span class="soon-dot"></span>Coming Soon</span>
+    <h3>Results are being finalized</h3>
+    <p>Our judging panel is reviewing every submission from the Prompt Engineering Challenge. Shortlisted teams advancing to Round 02 will be posted right here — keep an eye on this space and the WhatsApp group.</p>
+    <div class="results-note">⏱ Check back after Round 01 judging wraps up</div>
+  </div>
+</section>
 <footer>
   <div class="footer-inner">
     <div class="footer-brand"><div class="brand-badge">CT</div>CREA-TECH 2.0</div>
